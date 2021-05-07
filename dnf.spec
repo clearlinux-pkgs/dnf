@@ -4,7 +4,7 @@
 #
 Name     : dnf
 Version  : 4.2.19
-Release  : 60
+Release  : 61
 URL      : https://github.com/rpm-software-management/dnf/archive/4.2.19/dnf-4.2.19.tar.gz
 Source0  : https://github.com/rpm-software-management/dnf/archive/4.2.19/dnf-4.2.19.tar.gz
 Summary  : Next-generation version of the YUM package manager
