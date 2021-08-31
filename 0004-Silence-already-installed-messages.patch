@@ -16,7 +16,7 @@ diff --git a/dnf/base.py b/dnf/base.py
 index e01a528..2e69db7 100644
 --- a/dnf/base.py
 +++ b/dnf/base.py
-@@ -2550,4 +2550,3 @@ class Base(object):
+@@ -2708,4 +2708,3 @@ class Base(object):
  def _msg_installed(pkg):
      name = ucd(pkg)
      msg = _('Package %s is already installed.')

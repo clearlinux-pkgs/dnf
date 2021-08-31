@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Tue, 31 Aug 2021 15:30:52 -0700
+Subject: [PATCH] Restore debug log level for invalid config options
+
+There is an invalid config option in our default config, which
+raises this error message:
+
+  Invalid configuration value: failovermethod=priority in
+  /path/to/dnf.conf; Configuration: OptionBinding with id
+  "failovermethod" does not exist
+
+It's not a fatal error, and with dnf < 4.7.0, it was a debug-level log
+message, and values were described as "unknown" instead of "invalid".
+Keep the "invalid" description, but lower the log level.
+
+Reference: https://github.com/rpm-software-management/dnf/pull/1740
+Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
+---
+ dnf/conf/config.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dnf/conf/config.py b/dnf/conf/config.py
+index 600d47d..ced9ea6 100644
+--- a/dnf/conf/config.py
++++ b/dnf/conf/config.py
+@@ -148,7 +148,7 @@ class BaseConfig(object):
+                     try:
+                         self._config.optBinds().at(name).newString(priority, value)
+                     except RuntimeError as e:
+-                        logger.error(_('Invalid configuration value: %s=%s in %s; %s'),
++                        logger.debug(_('Invalid configuration value: %s=%s in %s; %s'),
+                                      ucd(name), ucd(value), ucd(filename), str(e))
+                 else:
+                     if name == 'arch' and hasattr(self, name):

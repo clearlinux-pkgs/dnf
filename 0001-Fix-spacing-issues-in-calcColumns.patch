@@ -21,7 +21,7 @@ diff --git a/dnf/cli/output.py b/dnf/cli/output.py
 index a7ece15..f0bdf69 100644
 --- a/dnf/cli/output.py
 +++ b/dnf/cli/output.py
-@@ -252,9 +252,16 @@ class Output(object):
+@@ -206,9 +206,16 @@ class Output(object):
                  else:
                      full_columns.append(columns[d] + 1)
              full_columns[0] += len(indent)
