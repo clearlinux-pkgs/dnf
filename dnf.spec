@@ -4,7 +4,7 @@
 #
 Name     : dnf
 Version  : 4.10.0
-Release  : 70
+Release  : 71
 URL      : https://github.com/rpm-software-management/dnf/archive/4.10.0/dnf-4.10.0.tar.gz
 Source0  : https://github.com/rpm-software-management/dnf/archive/4.10.0/dnf-4.10.0.tar.gz
 Summary  : Next-generation version of the YUM package manager
@@ -25,18 +25,11 @@ Requires: libdnf
 Requires: librepo
 Requires: pygobject
 Requires: smartcols
-BuildRequires : Sphinx
 BuildRequires : buildreq-cmake
-BuildRequires : dnf-plugins-core
 BuildRequires : gettext-dev
 BuildRequires : git
-BuildRequires : gpgme
-BuildRequires : iniparse
-BuildRequires : libcomps
-BuildRequires : libdnf
-BuildRequires : librepo
-BuildRequires : pygobject
-BuildRequires : smartcols
+BuildRequires : pypi(sphinx)
+BuildRequires : pypi-sphinx
 Patch1: 0001-Fix-spacing-issues-in-calcColumns.patch
 Patch2: 0002-Create-etc-dnf-modules.d-if-missing.patch
 Patch3: 0003-sphinx-build-3-does-not-exist.patch
@@ -123,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635724623
+export SOURCE_DATE_EPOCH=1641853669
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -137,7 +130,7 @@ make  %{?_smp_mflags}  ; make doc-man
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1635724623
+export SOURCE_DATE_EPOCH=1641853669
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/dnf
 cp %{_builddir}/dnf-4.10.0/COPYING %{buildroot}/usr/share/package-licenses/dnf/4cc77b90af91e615a64ae04893fdffa7939db84c
