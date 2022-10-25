@@ -4,7 +4,7 @@
 #
 Name     : dnf
 Version  : 4.10.0
-Release  : 76
+Release  : 77
 URL      : https://github.com/rpm-software-management/dnf/archive/4.10.0/dnf-4.10.0.tar.gz
 Source0  : https://github.com/rpm-software-management/dnf/archive/4.10.0/dnf-4.10.0.tar.gz
 Summary  : Next-generation version of the YUM package manager
@@ -112,7 +112,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1659636247
+export SOURCE_DATE_EPOCH=1666720850
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -126,10 +126,10 @@ make  %{?_smp_mflags}  ; make doc-man
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1659636247
+export SOURCE_DATE_EPOCH=1666720850
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/dnf
-cp %{_builddir}/dnf-%{version}/COPYING %{buildroot}/usr/share/package-licenses/dnf/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/dnf-%{version}/COPYING %{buildroot}/usr/share/package-licenses/dnf/4cc77b90af91e615a64ae04893fdffa7939db84c || :
 pushd clr-build
 %make_install
 popd
