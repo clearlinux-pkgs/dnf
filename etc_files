@@ -9,12 +9,10 @@ automatic.conf
 bash_completion.d
 dnf
 dnf
-dnf
 dnf-3
 dnf-strict.conf
 dnf.conf
 logrotate.d
-logrotate.d' ']'
 protected.d
 yum.conf
 zypper.conf

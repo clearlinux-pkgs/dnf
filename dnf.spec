@@ -7,12 +7,12 @@
 #
 Name     : dnf
 Version  : 4.21.0
-Release  : 80
+Release  : 81
 URL      : https://github.com/rpm-software-management/dnf/archive/4.21.0/dnf-4.21.0.tar.gz
 Source0  : https://github.com/rpm-software-management/dnf/archive/4.21.0/dnf-4.21.0.tar.gz
 Summary  : Next-generation version of the YUM package manager
 Group    : Development/Tools
-License  : GPL-1.0-only GPL-2.0 GPL-2.0+
+License  : GPL-2.0 GPL-2.0+
 Requires: dnf-bin = %{version}-%{release}
 Requires: dnf-config = %{version}-%{release}
 Requires: dnf-license = %{version}-%{release}
@@ -121,7 +121,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1721344575
+export SOURCE_DATE_EPOCH=1721403385
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -177,7 +177,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1721344575
+export SOURCE_DATE_EPOCH=1721403385
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/dnf
 cp %{_builddir}/dnf-%{version}/COPYING %{buildroot}/usr/share/package-licenses/dnf/4cc77b90af91e615a64ae04893fdffa7939db84c || :
